@@ -1,4 +1,5 @@
 # Import
+import budget_calc
 # Declare Variables
 # Get user input for monthly cash
 # Do calculation for 50%
@@ -7,3 +8,5 @@
 # Ask user if they have a goal and how much they want to put from 20% savings
 # Print to console
 # Save to a pdf file for all information
+
+
