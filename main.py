@@ -1,3 +1,4 @@
+# Import
 # Declare Variables
 # Get user input for monthly cash
 # Do calculation for 50%
