@@ -5,4 +5,14 @@ def budget_50(monthly):
     result = monthly - total
     return result
 # Calculate 30& of cash to wants
+def budget_25(monthly):
+    percent = .30
+    total = monthly * percent
+    result = monthly - total
+    return result
 # Calculate 20% of cash to savings
+def budget_20(monthly):
+    percent = .20
+    total = monthly * percent
+    result = monthly - total
+    return result
