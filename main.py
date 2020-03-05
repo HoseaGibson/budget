@@ -2,23 +2,31 @@
 import budget_calc
 # Declare Variables
 # Get user input for monthly cash
-monthly = int(input("How much is your monthly cash flow" ))
+monthly = int(input("How much is your monthly cash flow " ))
 
 # Do calculation for 50%
-total = budget_calc.budget_50(monthly)
+essential = budget_calc.budget_50(monthly)
 
-print(total)
+print(essential)
 # Do calculation for 30%
-total2 = budget_calc.budget_30(total)
+wants = budget_calc.budget_30(essential)
 
-print(total2)
+print(wants)
 # Do calculation for 20%
 
-total3 = budget_calc.budget_20(total2)
+savings = budget_calc.budget_20(wants)
 
-print(total3)
+print(savings)
 # Ask user if they have a goal and how much they want to put from 20% savings
-# Print to console
+goals = input("Do you have a goal you are trying to save for? 'yes' or 'no' ")
+if goals == 'yes':
+    amount = float(input("what is your goal amount to save? "))
+    goal_amount = wants - amount
+    print(goal_amount)
+else:
+    print("you have no goals for this month")
+# Ask user how much do they plan total to save and print how long it will take to get there
+# or if they know the month calc how much they need to save to reach that goal
 # Save to a pdf file for all information
 
 
