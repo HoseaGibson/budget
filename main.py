@@ -2,6 +2,8 @@
 import budget_calc
 # Declare Variables
 # Get user input for monthly cash
+from output_excel import create_workbook
+
 monthly = int(input("How much is your monthly cash flow " ))
 
 # Do calculation for 50%
@@ -28,5 +30,4 @@ else:
 # Ask user how much do they plan total to save and print how long it will take to get there
 # or if they know the month calc how much they need to save to reach that goal
 # Save to a pdf file for all information
-
-
+create_workbook()
