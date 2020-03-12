@@ -1,33 +1,33 @@
 # Import
 import budget_calc
-# Declare Variables
-# Get user input for monthly cash
 from output_excel import create_workbook
 
-monthly = int(input("How much is your monthly cash flow " ))
+# Get total monthly cash from check
+while True:
+    try:
+        monthly = int(input("How much is your monthly cash flow " ))
+        if monthly == 0:
+            print("Please enter a non-zero number")
+        elif monthly < 0:
+            print("Please enter a positive number")
+        break
+    except ValueError:
+        print("Please enter a valid number")
 
-# Do calculation for 50%
-essential = budget_calc.budget_50(monthly)
+# Calculate budget for essentials
 
-print(essential)
-# Do calculation for 30%
-wants = budget_calc.budget_30(essential)
+essential = budget_calc.budget_50(monthly) # Calculates essential percentage
 
-print(wants)
-# Do calculation for 20%
+print(budget_calc.budget_50_total(essential))# Calculates total bills returns left over
 
-savings = budget_calc.budget_20(wants)
+saving = budget_calc.budget_20(monthly)  # Calculates saving percentage
 
-print(savings)
-# Ask user if they have a goal and how much they want to put from 20% savings
-goals = input("Do you have a goal you are trying to save for? 'yes' or 'no' ")
-if goals == 'yes':
-    amount = float(input("what is your goal amount to save? "))
-    goal_amount = wants - amount
-    print(goal_amount)
-else:
-    print("you have no goals for this month")
-# Ask user how much do they plan total to save and print how long it will take to get there
-# or if they know the month calc how much they need to save to reach that goal
+print(budget_calc.budget_20_total(saving)) # Calculates total savings returns left over
+
+want = (budget_calc.budget_30(monthly)) # Calculates wants percentage
+
+print(budget_calc.budget_30_total(want)) # Calculates total wants and returns left overs
+
+print(essential, saving, want)
 # Save to a pdf file for all information
-create_workbook()
+#create_workbook()
