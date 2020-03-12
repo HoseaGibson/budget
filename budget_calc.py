@@ -65,5 +65,23 @@ def budget_20_total(start_budget):
 
     return total
 
+def isGoal():
+    goals = print(input("Do you have a goal to save for 'yes or no'"))
+
+    if goals == "yes" or "Yes":
+        amount = int(input("Please enter total amount of goal"))
+        time_frame = int(input("When do you want to complete goal 'enter in months number'  "))
+        g = goal_calculation(amount, time_frame)
+        print(g, amount, time_frame,  sep=" for ")
+    else:
+        print("No goals for now")
+
+def goal_calculation(amount, time):
+    a = amount
+    t = time
+    total = a / t
+    return total
+
+
 
 
