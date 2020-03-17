@@ -1,4 +1,5 @@
 # Calculate 50% of cash to necessities
+
 def budget_50(monthly):
     percent = .50
     total = monthly * percent
@@ -19,14 +20,9 @@ def budget_20(monthly):
 
 # Get input from user how much goes to each account for essential
 # Calculate total budget for essential
-def budget_50_total(start_budget):
+def budget_50_total(start_budget, house, utilities, grocery, health, car):
 
     total = start_budget
-    house = int(input("How much is your housing for month: "))
-    utilities = int(input("How much is your utilities this month 'gas, power, etc': "))
-    grocery = int(input("How much is your groceries for month "))
-    health = int(input("How much is your health insurance for the month "))
-    car = int(input("How much is your car payment"))
 
     for i in range(1):
         data = house, utilities, grocery,health,car
@@ -37,12 +33,9 @@ def budget_50_total(start_budget):
 
 # Get input from user how much goes to each account for wants
 # Calculate total budget for wants
-def budget_30_total(start_budget):
+def budget_30_total(start_budget, shopping, hobbies, dining):
 
     total = start_budget
-    shopping = int(input("How much is your saving for shopping': "))
-    hobbies = int(input("How much is your hobbies "))
-    dining = int(input("How much is your dining "))
 
     for i in range(1):
         data = shopping, hobbies,dining
@@ -53,10 +46,8 @@ def budget_30_total(start_budget):
 
 # Get input from user how much goes to each account for savings
 # Calculate total budget for saving
-def budget_20_total(start_budget):
+def budget_20_total(start_budget, three_month, ira ):
     total = start_budget
-    three_month = int(input("How much is your saving for month': "))
-    ira = int(input("How much is your ira "))
 
     for i in range(1):
         data = three_month, ira
@@ -65,6 +56,9 @@ def budget_20_total(start_budget):
 
     return total
 
+# Validate if they have a goal or not
+# If there is a goal do calculation for how long and amount the goal
+# Print goal out with amount and time frame to user
 def isGoal():
     goals = print(input("Do you have a goal to save for 'yes or no'"))
 
@@ -76,6 +70,7 @@ def isGoal():
     else:
         print("No goals for now")
 
+# Calculate the total amount to save per month to complete goal
 def goal_calculation(amount, time):
     a = amount
     t = time
