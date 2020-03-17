@@ -60,14 +60,17 @@ def budget_20_total(start_budget, three_month, ira ):
 # If there is a goal do calculation for how long and amount the goal
 # Print goal out with amount and time frame to user
 def isGoal():
-    goals = print(input("Do you have a goal to save for 'yes or no'"))
 
-    if goals == "yes" or "Yes":
+    goals = input("Do you have a goal to save for 'yes or no'")
+
+    if goals.lower().startswith("yes"):
+
         amount = int(input("Please enter total amount of goal"))
         time_frame = int(input("When do you want to complete goal 'enter in months number'  "))
         g = goal_calculation(amount, time_frame)
-        print(g, amount, time_frame,  sep=" for ")
-    else:
+        print(g, amount, time_frame, sep=" for ")
+
+    elif goals.lower().startswith("no"):
         print("No goals for now")
 
 # Calculate the total amount to save per month to complete goal
